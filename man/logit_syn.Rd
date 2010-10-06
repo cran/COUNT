@@ -10,7 +10,7 @@ a model given user defined specifications.
 }
 
 \usage{
-sim.data <- logit_syn(nobs=50000, d=1,  xv = c(2, -.55, 1.15))
+logit_syn(nobs=50000, d=1,  xv=c(1, 0.5, -1.5))
 }
 
 \arguments{
@@ -53,7 +53,7 @@ Andrew Robinson, Universty of Melbourne, Australia.
 library(COUNT)           
 
 # Binary logistic regression (denominator=1)
-sim.data <-logit_syn(nobs = 5000, d = 1, xv = c(1, .5, -1.5))
+sim.data <- logit_syn(nobs = 5000, d = 1, xv = c(1, .5, -1.5))
 mylogit <- glm(cbind(by,dby) ~ ., family=binomial(link="logit"), data = sim.data)
 summary(mylogit)
 confint(mylogit)

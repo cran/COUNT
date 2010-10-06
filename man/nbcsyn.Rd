@@ -10,7 +10,7 @@ user defined specifications.
 }
 
 \usage{
-sim.data <- nbcsyn(nobs=50000, alpha=1.15, xv = c(-1.5, -1.25, -.1))
+nbcsyn(nobs=50000, alpha=1.15, xv = c(-1.5, -1.25, -.1))
 }
 
 \arguments{
