@@ -54,10 +54,12 @@ library(MASS)
 glmrnb <- glm.nb(docvis ~ outwork + female + age + factor(edlevel), data=rwm5yr)
 summary(glmrnb)
 exp(coef(glmrnb))
+\dontrun{
 library(gee)
 mygee <- gee(docvis ~ outwork + age + factor(edlevel), id=id, 
   corstr = "exchangeable", family=poisson, data=rwm5yr)
 summary(mygee)
 exp(coef(mygee))
+}
 }
 \keyword{datasets}

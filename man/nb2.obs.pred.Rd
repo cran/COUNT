@@ -38,7 +38,7 @@ Hilbe, J.M. (2011), Negative Binomial Regression, second edition, Cambridge Univ
 \author{
 Joseph M. Hilbe, Arizona State University, and 
     Jet Propulsion Laboratory, California Institute of Technology 
-with assistance from Andrew Robinson, University of Melourne, Australia
+Andrew Robinson, University of Melbourne, Australia
 }
 
 \seealso{

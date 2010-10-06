@@ -44,9 +44,11 @@ library(MASS)
 glmshnb <- glm.nb(accident ~ op + co.70.74 + co.75.79 + offset(log(service)), data=ships)
 summary(glmshnb)
 exp(coef(glmshnb))
+\dontrun{
 library(gee)
 shipgee <- gee(accident ~ op + co.70.74 + co.75.79 + offset(log(service)), data=ships, 
    family=poisson, corstr="exchangeable", id=ship)
 summary(shipgee)
+}
 }
 \keyword{datasets}
