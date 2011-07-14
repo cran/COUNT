@@ -3,7 +3,7 @@ ml.nbc <- function(formula, data, start = NULL, verbose = FALSE) {
   mt <- attr(mf, "terms")
   y <- model.response(mf, "numeric")
   nbcX <- model.matrix(formula, data = data)
-  nbc.reg.ml <- function(b.hat, X, y) {
+  nbc.reg.ml <- function(b.hat, X, y, offset) {
     a.hat <- b.hat[1]
     xb.hat <- X %*% b.hat[-1]
     mu.hat <- 1 / ((exp(-xb.hat)-1)*a.hat)

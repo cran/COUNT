@@ -1,8 +1,8 @@
 
 # Generic synthetic NB1 model
 # In Hilbe, J.M., Negative Binomial Regression, 2nd ed, Cambridge Univ Press
-require(MASS)                     # nb1syn.r
-nb1syn  <- function(nobs = 50000,
+require(MASS)                     # nb1_syn.r
+nb1_syn  <- function(nobs = 50000,
                     delta = 1,
                     xv = c(1, 0.75, -1.25))  {
   p <- length(xv) - 1

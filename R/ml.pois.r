@@ -1,24 +1,21 @@
-# NB1 maximum likelihood function J Hilbe and A Robinson 11Apr 2010, 10Jul 2011
-ml.nb1 <- function(formula, data, offset = 0, start = NULL, verbose = FALSE) {
+# Poisson maximum likelihood function J Hilbe and A Robinson 11Apr 2010, 10Jul 2011
+ml.pois <- function(formula, data, offset = 0, start = NULL, verbose = FALSE) {
   mf <- model.frame(formula, data)
   mt <- attr(mf, "terms")
   y <- model.response(mf, "numeric")
-  nb1X <- model.matrix(formula, data = data)
-  nb1.reg.ml <- function(b.hat, X, y) {
-    a.hat <- b.hat[1]
-    xb.hat <- X %*% b.hat[-1] + offset
+  poisX <- model.matrix(formula, data = data)
+  pois.reg.ml <- function(b.hat, X, y) {
+    xb.hat <- X %*% b.hat + offset
     mu.hat <- exp(xb.hat)
-    r.hat <- (1/a.hat) * mu.hat    
-    sum(dnbinom(y,
-                size = r.hat,
-                mu = mu.hat,
-                log = TRUE))
+    sum(dpois(y,
+              lambda = mu.hat,
+              log = TRUE))
     }
   if (is.null(start))
-    start <- c(0.5, -1, rep(0, ncol(nb1X) - 1))
+    start <- c(-1, rep(0, ncol(poisX) - 1))
   fit <- optim(start,           
-               nb1.reg.ml,
-               X = nb1X,
+               pois.reg.ml,
+               X = poisX,
                y = y,
                control = list(
                  fnscale = -1,
@@ -33,12 +30,7 @@ ml.nb1 <- function(formula, data, offset = 0, start = NULL, verbose = FALSE) {
                         Z = beta.hat / se.beta.hat,
                         LCL = beta.hat - 1.96 * se.beta.hat,
                         UCL = beta.hat + 1.96 * se.beta.hat)
-  rownames(results) <- c("alpha", colnames(nb1X))
+  rownames(results) <- colnames(poisX)
   results <- results[c(2:nrow(results), 1),]
   return(results)
 }
-
-
-
-
-

@@ -1,12 +1,12 @@
-# NB2 maximum likelihood function  J Hilbe 11Apr 2010
-ml.nb2 <- function(formula, data, start = NULL, verbose = FALSE) {
+# NB2 maximum likelihood function J Hilbe and A Robinson 11Apr 2010, 10Jul 2011
+ml.nb2 <- function(formula, data, offset = 0, start = NULL, verbose = FALSE) {
   mf <- model.frame(formula, data)
   mt <- attr(mf, "terms")
   y <- model.response(mf, "numeric")
   nb2X <- model.matrix(formula, data = data)
   nb2.reg.ml <- function(b.hat, X, y) {
     a.hat <- b.hat[1]
-    xb.hat <- X %*% b.hat[-1]
+    xb.hat <- X %*% b.hat[-1] + offset
     mu.hat <- exp(xb.hat)
     r.hat <-  1 / a.hat    
     sum(dnbinom(y,

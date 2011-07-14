@@ -1,16 +1,16 @@
-\name{nbcsyn}
-\alias{nbcsyn}
+\name{nbc_syn}
+\alias{nbc_syn}
 
 \title{
  Negative binomial (NB-C): generic synthetic canonical negative binomial data and model
 }
 \description{
-nbcsyn is a generic function for developing synthetic NB-C data and a model given
+nbc_syn is a generic function for developing synthetic NB-C data and a model given
 user defined specifications.
 }
 
 \usage{
-nbcsyn(nobs=50000, alpha=1.15, xv = c(-1.5, -1.25, -.1))
+nbc_syn(nobs=50000, alpha=1.15, xv = c(-1.5, -1.25, -.1))
 }
 
 \arguments{
@@ -46,15 +46,15 @@ Andrew Robinson, Universty of Melbourne, Australia.
 }
 
 \seealso{
-\code{\link{nb2_syn}},   \code{\link{nb1syn}}
+\code{\link{nb2_syn}},   \code{\link{nb1_syn}}
 }
 \examples{
-sim.data <- nbcsyn(nobs = 50000, alpha = 1.15, xv = c(-1.5, -1.25, -.1))
+sim.data <- nbc_syn(nobs = 50000, alpha = 1.15, xv = c(-1.5, -1.25, -.1))
 mynbc <- ml.nbc(nbcy ~ . , data = sim.data)
 mynbc
 
 # default
-sim.data <- nbcsyn()
+sim.data <- nbc_syn()
 dnbc <- ml.nbc(nbcy ~ . , data = sim.data)
 dnbc
 

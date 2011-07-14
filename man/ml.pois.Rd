@@ -1,26 +1,26 @@
-\name{ml.nb1}
+\name{ml.pois}
 
-\alias{ml.nb1}
+\alias{ml.pois}
 
 \title{
- NB1: maximum likelihood linear negative binomial regression
+ NB2: maximum likelihood Poisson regression
 }
 
 \description{
-ml.nb1 is a maximum likelihood function for estimating linear 
-negative binomial (NB1) data. Output consists of a table of parameter 
-estimates, standard errors, z-value, and confidence intervals.
+  ml.pois is a maximum likelihood function for estimating
+Poisson data. Output consists of a table of parameter estimates,
+standard errors, z-value, and confidence intervals. An offset may be
+declared as an option.
 }
 
 \usage{
-ml.nb1(formula, data, offset=0, start=NULL, verbose=FALSE)
+ml.pois(formula, data, offset=0, start=NULL, verbose=FALSE)
 }
 
 \arguments{
   \item{formula}{
   an object of class '"formula"': a symbolic description of the 
-  model to be fitted.  The details of model specification are given under
-   'Details'.}
+  model to be fitted. }
  \item{data}{ 
   a mandatory data frame containing the variables in the model.
 }
@@ -38,19 +38,19 @@ a logical flag to indicate whether the fit information should be printed.
 }
 
 \details{
-ml.nb1 is used like glm.nb, but without saving ancillary statistics. 
+  ml.pois is used like glm, but does not provide ancillary statistics.
 }
 
 \value{
 The function returns a dataframe with the following components:
 
- \item{Estimate }{ML estimate of the parameter}
+ \item{Estimate }{ML estimate of the parameters}
  \item{SE }{Asymptotic estimate of the standard error of the estimate
  of the parameter}
  \item{Z }{The Z statistic of the asymptotic hypothesis test that the
  population value for the parameter is 0.}
- \item{LCL }{Lower 95\% confidence interval for the parameter estimate.}
- \item{UCL }{Upper 95\% confidence interval for the parameter estimate.}
+ \item{LCL }{Lower 95\% confidence interval for the parameter estimates.}
+ \item{UCL }{Upper 95\% confidence interval for the parameter estimates.}
 
 }
 
@@ -65,16 +65,26 @@ Joseph M. Hilbe, Arizona State University, and
 }
 
 \seealso{
-\code{\link{glm.nb}}, \code{\link{ml.nbc}}, \code{\link{ml.nb2}}
+\code{\link{glm.nb}}, \code{\link{ml.nbc}}, \code{\link{ml.nb1}}
 }
 
 \examples{
-# Table 10.8, Hilbe. J.M. (2011), Negative Binomial Regression, 
+# Table 8.7, Hilbe. J.M. (2011), Negative Binomial Regression, 
 #   2nd ed. Cambridge University Press (adapted)
 data(medpar)
 medpar$type <- factor(medpar$type)
-med.nb1 <- ml.nb1(los ~ hmo + white + type, data = medpar)
-med.nb1
+med.pois <- ml.pois(los ~ hmo + white + type, data = medpar)
+med.pois
+
+data(rwm5yr)
+lyear <- log(rwm5yr$year)
+rwm.poi <- ml.pois(docvis ~ outwork + age + female, offset=lyear, data =
+rwm5yr)
+rwm.poi
+exp(rwm.poi$Estimate)
+exp(rwm.poi$LCL)
+exp(rwm.poi$UCL)
+
 }
 
 \keyword{ models }

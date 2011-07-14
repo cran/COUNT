@@ -52,7 +52,7 @@ Joseph M. Hilbe, Arizona State University,
 }
 
 \seealso{
-\code{\link{poisson_syn}}
+\code{\link{poisson_syn}, \link{nb1_syn}},   \code{\link{nbc_syn}}
 }
 \examples{
 library(COUNT)           

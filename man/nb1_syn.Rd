@@ -1,16 +1,16 @@
-\name{nb1syn}
-\alias{nb1syn}
+\name{nb1_syn}
+\alias{nb1_syn}
 
 \title{
  Negative binomial (NB1): generic synthetic linear negative binomial data and model
 }
 \description{
-nb1syn is a generic function for developing synthetic NB1 data and a model given
+nb1_syn is a generic function for developing synthetic NB1 data and a model given
 user defined specifications.
 }
 
 \usage{
-nb1syn(nobs=50000, delta=1, xv = c(1, 0.75, -1.25))
+nb1_syn(nobs=50000, delta=1, xv = c(1, 0.75, -1.25))
 }
 
 \arguments{
@@ -50,27 +50,27 @@ Andrew Robinson, Universty of Melbourne, Australia.
 }
 
 \seealso{
-\code{\link{nb2_syn}},   \code{\link{nbcsyn}}
+\code{\link{nb2_syn}},   \code{\link{nbc_syn}}
 }
 
 \examples{
 library(COUNT)           
 
-sim.data <- nb1syn(nobs = 5000, delta = .5, xv = c(.5, 1.25, -1.5))
+sim.data <- nb1_syn(nobs = 5000, delta = .5, xv = c(.5, 1.25, -1.5))
 mynb1 <- ml.nb1(nb1y ~ . , data = sim.data)
 mynb1
 
 \dontrun{
 # use gamlss to model NB1 data
 library(gamlss)         
-sim.data <- nb1syn(nobs = 5000, delta = .5, xv = c(.5, 1.25, -1.5))
+sim.data <- nb1_syn(nobs = 5000, delta = .5, xv = c(.5, 1.25, -1.5))
 mynb1 <- gamlss( nb1y ~ . , family=NBII, data = sim.data)
 mynb1
 }
 
 \dontrun{
 # default
-sim.data <- nb1syn()
+sim.data <- nb1_syn()
 dnb1 <- ml.nb1(nb1y ~ . , data = sim.data)
 dnb1
 }

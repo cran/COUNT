@@ -1,8 +1,8 @@
 # Generic synthetic NB-C model
 #  Table 10.9, Hilbe, J.M., Negative Binomial Regression, 2nd ed.
-#    Cambridge Univ Press       nbcsyn.r
+#    Cambridge Univ Press       nbc_syn.r
 require(MASS)
-    nbcsyn  <- function(nobs = 50000,
+    nbc_syn  <- function(nobs = 50000,
                         alpha = 1.15,
                         xv = c(-1.5, -1.25, -.1))  {
       q <- length(xv) - 1

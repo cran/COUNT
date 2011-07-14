@@ -13,7 +13,7 @@ estimates, standard errors, z-value, and confidence intervals.
 }
 
 \usage{
-ml.nb2(formula, data, start=NULL, verbose=FALSE)
+ml.nb2(formula, data, offset=0, start=NULL, verbose=FALSE)
 }
 
 \arguments{
@@ -23,6 +23,11 @@ ml.nb2(formula, data, start=NULL, verbose=FALSE)
    'Details'.}
  \item{data}{ 
   a mandatory data frame containing the variables in the model.
+}
+ \item{offset}{ 
+   this can be used to specify an _a priori_ known component to
+   be included in the linear predictor during fitting.  The offset
+  should be provided on the log scale.
 }
   \item{start}{
  an optional vector of starting values for the parameters.
