@@ -47,9 +47,6 @@ Andrew Robinson, Universty of Melbourne, Australia, and
 Joseph M. Hilbe, Arizona State University, 
     Jet Propulsion Laboratory, California Institute of Technology 
 }
-\note{
-%% ...
-}
 
 \seealso{
 \code{\link{poisson_syn}, \link{nb1_syn}},   \code{\link{nbc_syn}}

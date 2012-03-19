@@ -42,9 +42,6 @@ Joseph M. Hilbe, Arizona State University, and
     Jet Propulsion Laboratory, California Institute of Technology 
 Andrew Robinson, Universty of Melbourne, Australia.
 }
-\note{
-%% ...
-}
 
 \seealso{
 \code{\link{probit_syn}}

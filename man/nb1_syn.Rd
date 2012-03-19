@@ -45,10 +45,6 @@ Joseph M. Hilbe, Arizona State University, and
 Andrew Robinson, Universty of Melbourne, Australia.
 }
 
-\note{
-%% ...
-}
-
 \seealso{
 \code{\link{nb2_syn}},   \code{\link{nbc_syn}}
 }
