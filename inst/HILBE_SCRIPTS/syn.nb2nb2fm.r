@@ -12,8 +12,8 @@ ia1 <- 1/a1
 ia2 <- 1/a2                     
 exb1 <- exp(xb1) 
 exb2 <- exp(xb2)                 
-xg1 <- rgamma(nobs, a1, a1, ia1)  
-xg2 <- rgamma(nobs, a2, a2, ia2)  
+xg1 <- rgamma(n = nobs, shape = a1, rate = a1)  
+xg2 <- rgamma(n = nobs, shape = a2, rate = a2)  
 xbg1 <-exb1*xg1 
 xbg2 <-exb2*xg2                  
 nby1 <- rpois(nobs, xbg1)

@@ -12,7 +12,7 @@ mysim <- function()
  a <- .5                        
 ia <- 1/.5                     
 exb <- exp(xb)                 
-xg <- rgamma(nobs, a, a, ia)  
+xg <- rgamma(n = nobs, shape = a, rate = a)
 xbg <-exb*xg                   
 nby <- rpois(nobs, xbg)       
 nbsim <-glm.nb(nby ~ x1 + x2)  

@@ -8,7 +8,7 @@ x1 <- runif(nobs)
 x2 <- runif(nobs)
 xb <- 2 + .75*x1 - 1.25*x2   # parameter values
 exb <- exp(xb)               # Poisson predicted value
-xg <- rgamma(nobs, 1, 1, 1)  # gamma variate, param 1,1
+xg <- rgamma(n = nobs, shape = 1, rate = 1)  # gamma variate, param 1,1
 xbg <-exb*xg                 # mix Poisson and gamma variates
 gy <- rpois(nobs, xbg)       # generate NB2 variates
 geo <-glm.nb(gy ~ x1 + x2)   # model geometric

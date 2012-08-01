@@ -65,8 +65,9 @@ Joseph M. Hilbe, Arizona State University, and
 \examples{
 # Table 10.12, Hilbe. J.M. (2011), Negative Binomial Regression, 
 #   2nd ed. Cambridge University Press (adapted)
-data(medpar)
 
+\dontrun{
+data(medpar)
 nobs <- 50000
 x2 <- runif(nobs)
 x1 <- runif(nobs)
@@ -78,7 +79,7 @@ gcy <- rnbinom(nobs, size=r, prob = p)
 test <- data.frame(gcy, x1, x2)
 nbc <- ml.nbc(gcy ~ x1 + x2, data=test)
 nbc
-
+}
 }
 
 \keyword{ models }

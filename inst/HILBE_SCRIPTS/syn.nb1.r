@@ -11,7 +11,7 @@ xb <-  0.5 + 1.25*x1 - 1.5*x2
 delta <- .5      # value assigned to delta
 exb <-exp(xb)
 idelta <- (1/delta)*exb    
-xg <-rgamma(50000, idelta, idelta, 1/idelta)
+xg <-rgamma(n = 50000, shape = idelta, rate = idelta)
 xbg <- exb*xg
 nb1y <- rpois(50000, xbg)
 jhgm <- gamlss(nbly ~ x1 + x2,family=NBII)

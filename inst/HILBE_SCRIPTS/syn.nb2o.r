@@ -9,7 +9,7 @@ xb<-2 + .75*x1 -1.25*x2 + loff            # linear predictor
 exb <-exp(xb)                  # inverse link
 a <- .5                        # assign value to alpha
 ia <- 1/.5                     # invert alpha
-xg <- rgamma(50000, a, a, ia)  # generate gamma variates w alpha
+xg <- rgamma(n = 50000, shape = a, rate = a)  # generate gamma variates w alpha
 xbg <-exb*xg                   # mix Poisson and gamma variates
 nbyo <- rpois(50000, xbg)      # generate NB2 variates - w offset
 nb2o <-glm.nb(nbyo ~ x1 + x2 + offset(loff))  # model NB2

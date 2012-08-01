@@ -8,7 +8,7 @@ xb <- 2 + .75*x1 - 1.25*x2    # parameter values
 a <- .5                       # assign value to ancillary parameter
 ia <- 1/.5                    # invert alpha
 exb <- exp(xb)                # Poisson predicted value
-xg <- rgamma(nobs, a, a, ia)  # generate gamma variates given alpha
+xg <- rgamma(n = nobs, shaep = a, rate = a)  # generate gamma variates given alpha
 xbg <-exb*xg                  # mix Poisson and gamma variates
 nby <- rpois(nobs, xbg)       # generate NB2 variates
 jhnb2 <-glm.nb(nby ~ x1 + x2) # model NB2

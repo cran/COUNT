@@ -11,7 +11,7 @@ nb1_syn  <- function(nobs = 50000,
   d <- delta                  
   exb <- exp(xb)   
   idelta <- (1/delta)*exb            
-  xg <- rgamma(nobs, idelta, idelta, 1/idelta)  
+  xg <- rgamma(n = nobs, shape = idelta, rate = idelta)  
   xbg <- exb*xg
   nb1y <- rpois(nobs, xbg)     
   out <- data.frame(cbind(nb1y, X[,-1]))

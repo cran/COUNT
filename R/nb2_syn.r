@@ -9,7 +9,7 @@ nb2_syn  <- function(nobs = 50000, off = 0,
   a <- alpha                  
   ia <- 1/a                   
   exb <- exp(xb + off)        
-  xg <- rgamma(nobs, a, a, ia)
+  xg <- rgamma(n = nobs, shape = a, rate = a)
   xbg <-exb*xg
   nby <- rpois(nobs, xbg) 
   out <- data.frame(cbind(nby, X[,-1]))

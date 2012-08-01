@@ -45,6 +45,8 @@ Andrew Robinson, Universty of Melbourne, Australia.
 \code{\link{nb2_syn}},   \code{\link{nb1_syn}}
 }
 \examples{
+
+\dontrun{
 sim.data <- nbc_syn(nobs = 50000, alpha = 1.15, xv = c(-1.5, -1.25, -.1))
 mynbc <- ml.nbc(nbcy ~ . , data = sim.data)
 mynbc
@@ -53,7 +55,7 @@ mynbc
 sim.data <- nbc_syn()
 dnbc <- ml.nbc(nbcy ~ . , data = sim.data)
 dnbc
-
+}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

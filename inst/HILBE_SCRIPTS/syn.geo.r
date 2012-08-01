@@ -6,7 +6,7 @@ x2 <- runif(nobs)
 x1 <- runif(nobs)
 xb <- 2*x1 - .5*x2 - 1   
 exb <- exp(xb)               
-xg <- rgamma(nobs, 1, 1, 1) 
+xg <- rgamma(n = nobs, shape = 1, rate = 1) 
 xbg <-exb*xg                 
 gy <- rpois(nobs, xbg)      
 gnb2 <-glm.nb(gy ~ x1 + x2)   

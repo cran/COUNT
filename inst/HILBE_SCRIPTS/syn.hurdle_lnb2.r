@@ -9,7 +9,7 @@ xb <- 2 + .75*x1 - 1.25*x2
 a <- .5
 ia <- 1/.5
 exb <- exp(xb)
-xg <- rgamma(nobs, a, a, ia)
+xg <- rgamma(n = nobs, shape = a, scale = a)
 xbg <-exb*xg
 nby <- rpois(nobs, xbg)
 nbdata <- data.frame(nby, x1, x2)
