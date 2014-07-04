@@ -45,7 +45,6 @@ Andrew Robinson, University of Melbourne, Australia
 \code{\link{myTable}}
 }
 \examples{
-library(COUNT)
 
 data(medpar)
 mdpar <- glm(los ~ hmo+white+type2+type3, family=poisson, data=medpar, y=TRUE, model=TRUE)

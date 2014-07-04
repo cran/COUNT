@@ -46,7 +46,6 @@ Andrew Robinson, Universty of Melbourne, Australia.
 \code{\link{nb2_syn}}
 }
 \examples{
-library(COUNT)
 
 # standard Poisson model with two predictors and intercept
 sim.data <- poisson_syn(nobs = 500, xv = c(2, .75, -1.25))

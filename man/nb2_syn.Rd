@@ -52,7 +52,7 @@ Joseph M. Hilbe, Arizona State University,
 \code{\link{poisson_syn}, \link{nb1_syn}},   \code{\link{nbc_syn}}
 }
 \examples{
-library(COUNT)           
+library(MASS)           
 
 sim.data <- nb2_syn(nobs = 500, alpha = .5, xv = c(2, .75, -1.25))
 mynb2 <- glm.nb(nby ~ . , data = sim.data)

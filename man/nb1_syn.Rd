@@ -50,7 +50,6 @@ Andrew Robinson, Universty of Melbourne, Australia.
 }
 
 \examples{
-library(COUNT)           
 
 sim.data <- nb1_syn(nobs = 5000, delta = .5, xv = c(.5, 1.25, -1.5))
 mynb1 <- ml.nb1(nb1y ~ . , data = sim.data)

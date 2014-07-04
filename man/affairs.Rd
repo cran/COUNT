@@ -48,13 +48,17 @@ Greene, W.H. (2003). Econometric Analysis, Fifth Edition, New York: Macmillan.
 Hilbe, Joseph M (2011), Negative Binomial Regression, Cambridge University Press
 Hilbe, Joseph M (2009), Logistic regression Models, Chapman & Hall/CRC
 }
+
 \examples{
 data(affairs)
-glmaffp <- glm(naffairs ~ kids + yrsmarr2 + yrsmarr3 + yrsmarr4 + yrsmarr5, family=poisson, data=affairs)
+glmaffp <- glm(naffairs ~ kids + yrsmarr2 + yrsmarr3 + yrsmarr4 + yrsmarr5,
+               family = poisson, data = affairs)
 summary(glmaffp)
 exp(coef(glmaffp))
+
 require(MASS)
-glmaffnb <- glm.nb(naffairs ~ kids + yrsmarr2 + yrsmarr3 + yrsmarr4 + yrsmarr5, data=affairs)
+glmaffnb <- glm.nb(naffairs ~ kids + yrsmarr2 + yrsmarr3 + yrsmarr4 + yrsmarr5,
+                   data=affairs)
 summary(glmaffnb)
 exp(coef(glmaffnb))
 }

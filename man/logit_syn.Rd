@@ -47,8 +47,6 @@ Andrew Robinson, Universty of Melbourne, Australia.
 \code{\link{probit_syn}}
 }
 \examples{
-library(COUNT)           
-
 # Binary logistic regression (denominator=1)
 sim.data <-logit_syn(nobs = 500, d = 1, xv = c(1, .5, -1.5))
 mylogit <- glm(cbind(by,dby) ~ ., family=binomial(link="logit"), data = sim.data)

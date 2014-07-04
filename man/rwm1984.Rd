@@ -1,19 +1,17 @@
-\name{rwm5yr}
-\alias{rwm5yr}
+\name{rwm1984}
+\alias{rwm1984}
 \docType{data}
-\title{rwm5yr}
+\title{rwm1984}
 \description{
-German health registry for the years 1984-1988. Health 
-information for years immediately prior to health reform. 
+German health registry for the year 1984. 
 }
-\usage{data(rwm5yr)}
+\usage{data(rwm1984)}
 \format{
-  A data frame with 19,609 observations on the following 17 variables.
+  A data frame with 3,874 observations on the following 17 variables.
   \describe{
-   \item{\code{id}}{patient ID  (1=7028)}
    \item{\code{docvis}}{number of visits to doctor during year (0-121)}
    \item{\code{hospvis}}{number of days in hospital during year (0-51)}
-   \item{\code{year}}{year; (categorical: 1984, 1985, 1986, 1987, 1988)}
+%   \item{\code{year}}{year; (categorical: 1984, 1985, 1986, 1987, 1988)}
    \item{\code{edlevel}}{educational level (categorical: 1-4)}
    \item{\code{age}}{age: 25-64}
    \item{\code{outwork}}{out of work=1; 0=working}
@@ -30,14 +28,14 @@ information for years immediately prior to health reform.
   }
 }
 \details{
-rwm5yr is saved as a data frame.
+rwm1984 is saved as a data frame.
 Count models typically use docvis as response variable. 0 counts are included
 }
 \source{
-German Health Reform Registry, years pre-reform 1984-1988, in Hilbe and Greene (2007)
+German Health Reform Registry, year=1984, in Hilbe and Greene (2007)
 }
 \references{
-Hilbe, Joseph M (2014), Modeling Count Data, Cambridge University Press
+Hilbe, Joseph, M (2014), Modeling Count Data, Cambridge University Press
 Hilbe, Joseph M (2011), Negative Binomial Regression, Cambridge University Press
 Hilbe, J. and W. Greene (2008). Count Response Regression Models, in ed. 
   C.R. Rao, J.P Miller, and D.C. Rao, Epidemiology and Medical Statistics, 
@@ -45,21 +43,17 @@ Hilbe, J. and W. Greene (2008). Count Response Regression Models, in ed.
 }
 \examples{
 library(MASS)
-data(rwm5yr)
+library(msme)
+data(rwm1984)
 
-glmrp <- glm(docvis ~ outwork + female + age + factor(edlevel), family=poisson, data=rwm5yr)
+glmrp <- glm(docvis ~ outwork + female + age + factor(edlevel), family=poisson, data=rwm1984)
 summary(glmrp)
 exp(coef(glmrp))
 
-\dontrun{
-library(msme)
-nb2 <- nbinomial(docvis ~ outwork + female + age + factor(edlevel), data=rwm5yr)
-summary(nb2)
-exp(coef(nb2)) 
+summary(nb2 <- nbinomial(docvis ~ outwork + female + age + factor(edlevel), data=rwm1984))
+exp(coef(nb2))
 
-glmrnb <- glm.nb(docvis ~ outwork + female + age + factor(edlevel), data=rwm5yr)
-summary(glmrnb)
+summary(glmrnb <- glm.nb(docvis ~ outwork + female + age + factor(edlevel), data=rwm1984))
 exp(coef(glmrnb))
-}
 }
 \keyword{datasets}

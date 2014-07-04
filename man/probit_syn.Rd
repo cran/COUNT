@@ -48,7 +48,6 @@ Andrew Robinson, Universty of Melbourne, Australia.
 \code{\link{logit_syn}}
 }
 \examples{
-library(COUNT)           
 
 # Binary probit regression (denominator=1)
 sim.data <-probit_syn(nobs = 5000, d = 1, xv = c(1, .5, -1.5))

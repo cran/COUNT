@@ -45,7 +45,7 @@ Andrew Robinson, University of Melbourne, Australia
 \code{\link{myTable}}
 }
 \examples{
-library(COUNT)
+library(MASS)
 
 data(medpar)
 mdpar <- glm.nb(los ~ hmo+white+type2+type3, data=medpar, y=TRUE, model=TRUE)

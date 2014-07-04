@@ -1,11 +1,8 @@
 \name{medpar}
 \alias{medpar}
 \docType{data}
-\title{
-medpar 
-}
+\title{medpar}
 \description{
-%%  ~~ description of the dataset. ~~
 The US national Medicare inpatient hospital database is referred to as the Medpar data, 
 which is prepared yearly from hospital filing records. Medpar files for each state are also 
 prepared. The full Medpar data consists of 115 variables. The national Medpar has some 
@@ -30,27 +27,31 @@ group (DRG 112). Patient data have been randomly selected from the original data
   }
 }
 \details{
-%%  ~~ If necessary, more details than the __description__ above ~~
 medpar is saved as a data frame.
 Count models use los as response variable. 0 counts are structurally excluded  
 }
 \source{
-%%  ~~ reference to a publication or URL from which the data were obtained ~~
 1991 National Medpar data, National Health Economics & Research Co.
 }
 \references{
+Hilbe, Joseph M (2014), Modeling Count Data, Cambridge University Press
 Hilbe, Joseph M (2007, 2011), Negative Binomial Regression, Cambridge University Press
 Hilbe, Joseph M (2009), Logistic Regression Models, Chapman & Hall/CRC
 first used in Hardin, JW and JM Hilbe (2001, 2007), Generalized Linear Models and Extensions, Stata Press
 }
 \examples{
+library(MASS)
+library(msme)
 data(medpar)
 glmp <- glm(los ~ hmo + white + factor(type), family=poisson, data=medpar)
 summary(glmp)
 exp(coef(glmp))
-library(MASS)
+nb2 <- nbinomial(los ~ hmo + white + factor(type), data=medpar)
+summary(nb2)
+exp(coef(nb2))
 glmnb <- glm.nb(los ~ hmo + white + factor(type), data=medpar)
 summary(glmnb)
 exp(coef(glmnb))
+
 }
 \keyword{datasets}
