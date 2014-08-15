@@ -1,11 +1,11 @@
-cca25db52afadf1dfb5af1f3f6f991fd *DESCRIPTION
+94439875ee4a7555e5eba169d5ef51c0 *DESCRIPTION
 f86d59f0fab798032e75cb5ff424e740 *NAMESPACE
 d762c040c8c38ab3148d225f4e7394ff *R/logit_syn.r
 52c1d43f9723d3fcfb8b20ff4cf14568 *R/ml.nb1.r
 f8f615db4d528d79d74e6bef143a653c *R/ml.nb2.r
 c4bfb5e0ba17560111162598f830002d *R/ml.nbc.r
 0e7f96718269de99c95b9dcc15599759 *R/ml.pois.r
-556ccbf8581282f9ed5ea799ab460252 *R/modelfit.r
+4a3f8972f8a42df3d92475a63c2255de *R/modelfit.r
 bafb96baca602fe873c00ead4874fc45 *R/myTable.r
 b098d6fcd7da660c18034f7eca873dc5 *R/nb1_syn.r
 b09891d6262604b8b77c0de28b4a45a6 *R/nb2.obs.pred.r
