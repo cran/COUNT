@@ -1,4 +1,9 @@
 import(msme)
 import(MASS)
 import(sandwich)
+
+importFrom("stats", "dnbinom", "dpois", "fitted", "model.frame",
+           "model.matrix", "model.response", "optim", "pnorm",
+           "rbinom", "rgamma", "rnbinom", "rnorm", "rpois", "runif")
+
 exportPattern("^[^\\.]")

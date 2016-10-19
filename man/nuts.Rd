@@ -15,16 +15,16 @@ The stripped cone count was only taken when the mean diameter of trees was under
 }
 \usage{data(nuts)}
 \format{
-  A data frame with 52 observations on the following 5 variables.
+  A data frame with 52 observations on the following 8 variables.
   \describe{
-    \item{\code{cones}}{total fish counted per site}
-    \item{\code{ntrees}}{mean water depth per site}
-    \item{\code{dbh}}{adjusted area of site}
-    \item{\code{height}}{total fish counted per site}
-    \item{\code{cover}}{mean water depth per site}
-    \item{\code{sntrees}}{standardized mean water depth per site}
-    \item{\code{sheight}}{standardized total fish counted per site}
-    \item{\code{scover}}{standardized mean water depth per site}
+    \item{\code{cones}}{number cones stripped by squirrels}
+    \item{\code{ntrees}}{number of trees per plot}
+    \item{\code{dbh}}{number DBH per plot}
+    \item{\code{height}}{mean tree height per plot}
+    \item{\code{cover}}{canopy closure (as a percentage)}
+    \item{\code{sntrees}}{standardized number of trees per plot}
+    \item{\code{sheight}}{standardized mean tree height per plot}
+    \item{\code{scover}}{standardized canopy closure (as a percentage)}
     }
 }
 \details{
@@ -32,7 +32,7 @@ nuts is saved as a data frame.
 Count models use ntrees as response variable. Counts start at 3  
 }
 \source{
-Zuur, Hilbe, Ieno (2013), A Beginner's Guide to GLM and GLMM using R, 
+Zuur, Hilbe, Ieno (2013), A Beginner's Guide to GLM and GLMM using R, Highlands
 }
 \references{
 Hilbe, Joseph M (2014), Modeling Count Data, Cambridge University Press
@@ -42,7 +42,10 @@ Flaherty, S et al (2012), "The impact of forest stand structure on red
 } 
 \examples{
 data(nuts)
-nut <- subset(nuts, dbh<.6)
+nut <- subset(nuts, dbh < 0.6)
+# sntrees <- scale(nuts$ntrees)
+# sheigtht <- scale(nuts$height)
+# scover <- scale(nuts$cover)
 summary(PO <- glm(cones ~ sntrees + sheight + scover, family=quasipoisson, data=nut))
 }
 \keyword{datasets}
