@@ -15,7 +15,7 @@ by covariate patterns from individual observations.
     \item{\code{cases}}{number of cases with same covariate pattern}
     \item{\code{anterior}}{1=anterior site MI; 0=inferior site MI}
     \item{\code{hcabg}}{1=history of CABG; 0=no history of CABG}
-    \item{\code{killip}}{Killip level of cardiac event severity (1-4)age75}{1= Age>75; 0=Age<=75}
+    \item{\code{killip}}{Killip level of cardiac event severity (1-4)age75 - 1= Age>75; 0=Age<=75}
     \item{\code{kk1}}{(1/0) angina; not MI}
     \item{\code{kk2}}{(1/0) moderate severity cardiac event}
     \item{\code{kk3}}{(1/0) Severe cardiac event}

@@ -65,7 +65,7 @@ Joseph M. Hilbe, Arizona State University, and
 }
 
 \seealso{
-\code{\link{glm.nb}}, \code{\link{ml.nbc}}, \code{\link{ml.nb1}}
+\code{\link[MASS]{glm.nb}}, \code{\link{ml.nbc}}, \code{\link{ml.nb1}}
 }
 
 \examples{

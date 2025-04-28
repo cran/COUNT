@@ -47,7 +47,7 @@ Users may past modelfit.r into script editor to run, as well as load it.
 }
 
 \seealso{
-\code{\link{glm}}, \code{\link{glm.nb}}
+\code{\link{glm}}, \code{\link[MASS]{glm.nb}}
 }
 \examples{
 ## Hilbe (2011), Table 9.17
